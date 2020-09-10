@@ -19,17 +19,6 @@ public class beeScript : MonoBehaviour
 
     public GameObject textDisplayTheCollum;
 
-  
-
-    //public void StoreCollum()
-    //{
-        
-    //}
-
-    //public void StoreLine()
-    //{
-        
-    //}
 
     public void StoreAll()
     {
@@ -40,7 +29,6 @@ public class beeScript : MonoBehaviour
         theLine = inputFieldTheLine.GetComponent<Text>().text;
 
         textDisplayTheLine.GetComponent<Text>().text = "Line " + theLine;
-
 
     }
 }
