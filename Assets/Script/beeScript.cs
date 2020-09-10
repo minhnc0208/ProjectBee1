@@ -1,18 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Purchasing;
+using UnityEngine.UI;
 public class beeScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // the Line
+    public string theLine;
 
-    // Update is called once per frame
-    void Update()
-    {
+    public GameObject inputFieldTheLine;
+
+    public GameObject textDisplayTheLine;
+
+    // the Collum
+    public string theCollum;
+
+    public GameObject inputFieldTheCollum;
+
+    public GameObject textDisplayTheCollum;
+
+  
+
+    //public void StoreCollum()
+    //{
         
+    //}
+
+    //public void StoreLine()
+    //{
+        
+    //}
+
+    public void StoreAll()
+    {
+        theCollum = inputFieldTheCollum.GetComponent<Text>().text;
+
+        textDisplayTheCollum.GetComponent<Text>().text = "Col: " + theCollum ;
+
+        theLine = inputFieldTheLine.GetComponent<Text>().text;
+
+        textDisplayTheLine.GetComponent<Text>().text = "Line " + theLine;
+
+
     }
 }
