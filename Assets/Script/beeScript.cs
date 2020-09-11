@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Purchasing;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class beeScript : MonoBehaviour
 {
@@ -30,5 +31,9 @@ public class beeScript : MonoBehaviour
 
         textDisplayTheLine.GetComponent<Text>().text = "Line " + theLine;
 
+
+        // Load Scene
+
+        //SceneManager.LoadScene("GameScene");
     }
 }
