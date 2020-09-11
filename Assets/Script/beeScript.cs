@@ -31,10 +31,9 @@ public class beeScript : MonoBehaviour
 
         textDisplayTheLine.GetComponent<Text>().text = "Line " + theLine;
 
-
-        
-
     }
 
   
+
+
 }
