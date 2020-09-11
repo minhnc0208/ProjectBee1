@@ -32,8 +32,9 @@ public class beeScript : MonoBehaviour
         textDisplayTheLine.GetComponent<Text>().text = "Line " + theLine;
 
 
-        // Load Scene
+        
 
-        //SceneManager.LoadScene("GameScene");
     }
+
+  
 }
