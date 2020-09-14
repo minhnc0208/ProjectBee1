@@ -15,7 +15,7 @@ public class beeClone : MonoBehaviour
         // GameObject BeeClone = Instantiate(beeOriginal);
 
         CreateBee(5);
-
+        
         CreateBee2(5);
 
     }
