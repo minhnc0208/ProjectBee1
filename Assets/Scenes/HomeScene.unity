@@ -890,7 +890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8bec557f0c1bac4d902c670b8dfb9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeLoading: 5
+  delayBeforeLoading: 10
   sceneNameToLoad: GameScene
 --- !u!4 &1124371291
 Transform:

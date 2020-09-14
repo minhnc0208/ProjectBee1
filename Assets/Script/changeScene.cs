@@ -7,7 +7,7 @@ public class changeScene : MonoBehaviour
 {
     [SerializeField]
 
-    private float delayBeforeLoading = 5f;
+    private float delayBeforeLoading = 10f;
 
     [SerializeField]
 
@@ -21,6 +21,7 @@ public class changeScene : MonoBehaviour
         timeElapsed += Time.deltaTime;
 
         if (timeElapsed > delayBeforeLoading)
+
             SceneManager.LoadScene(sceneNameToLoad);
     }
 }
