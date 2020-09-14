@@ -18,6 +18,8 @@ public class beeClone : MonoBehaviour
         
         CreateBee2(5);
 
+      
+
     }
 
     // Update is called once per frame
@@ -47,4 +49,6 @@ public class beeClone : MonoBehaviour
             BeeClone2.name = "BeeClone2" + (i + 1);
         }
     }
+
+    
 }
