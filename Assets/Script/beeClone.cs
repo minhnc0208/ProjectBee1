@@ -16,6 +16,8 @@ public class beeClone : MonoBehaviour
 
         CreateBee(5);
 
+        CreateBee2(5);
+
     }
 
     // Update is called once per frame
@@ -28,12 +30,23 @@ public class beeClone : MonoBehaviour
     {
         for(int  i = 0; i<beesNum; i++)
         {
-            GameObject BeeClone = Instantiate(beeOriginal, new Vector3(i*1.8f, beeOriginal.transform.position.y*1), 
+            GameObject BeeClone = Instantiate(beeOriginal, new Vector3(i* 1.8f, beeOriginal.transform.position.y*1), 
                 beeOriginal.transform.rotation);
 
             //BeeClone.transform.parent = beeContainer.transform;
 
             BeeClone.name = "BeeClone" + (i + 1);
+        }
+    }
+
+    void CreateBee2(int bees2Num)
+    {
+        for(int i = 0; i<bees2Num; i++)
+        {
+            GameObject BeeClone2 = Instantiate(beeOriginal, new Vector3(i * 1.8f, beeOriginal.transform.position.y+1.7f),
+                beeOriginal.transform.rotation);
+
+            BeeClone2.name = "BeeClone2" + (i + 1);
         }
     }
 }
