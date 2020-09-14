@@ -25,11 +25,22 @@ public class beeScript : MonoBehaviour
     {
         theCollum = inputFieldTheCollum.GetComponent<Text>().text;
 
+        int.TryParse(inputFieldTheCollum.GetComponent<Text>().text, out int cotgido);
+
+        AAA.Instance.socot = cotgido;
+
         textDisplayTheCollum.GetComponent<Text>().text = "Col: " + theCollum ;
 
         theLine = inputFieldTheLine.GetComponent<Text>().text;
 
+        int.TryParse(inputFieldTheLine.GetComponent<Text>().text, out int donggido);
+
+        AAA.Instance.sodong = donggido;
+
         textDisplayTheLine.GetComponent<Text>().text = "Line " + theLine;
+
+
+        SceneManager.LoadScene("GameScene");
 
     }
 

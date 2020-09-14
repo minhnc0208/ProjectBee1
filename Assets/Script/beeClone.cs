@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,12 +15,20 @@ public class beeClone : MonoBehaviour
     {
         // GameObject BeeClone = Instantiate(beeOriginal);
 
-        CreateBee(5);
-        
-        CreateBee2(5);
+        //CreateBee(5);
 
-      
+        //CreateBee2(5);
 
+
+
+        CreateBee(AAA.Instance.sodong);
+
+        CreateBee2(AAA.Instance.socot);
+    }
+
+    private void CreateBee(int v1, int v2)
+    {
+        throw new NotImplementedException();
     }
 
     // Update is called once per frame
@@ -28,9 +37,10 @@ public class beeClone : MonoBehaviour
         
     }
 
+    //số dòng
     void CreateBee(int beesNum)
     {
-        for(int  i = 0; i<beesNum; i++)
+        for(int  i = 0; i <= beesNum ; i++)
         {
             GameObject BeeClone = Instantiate(beeOriginal, new Vector3(i* 1.7f, beeOriginal.transform.position.y*1), 
                 beeOriginal.transform.rotation);
@@ -39,9 +49,10 @@ public class beeClone : MonoBehaviour
         }
     }
 
+    // số cột
     void CreateBee2(int bees2Num)
     {
-        for(int i = 0; i<bees2Num; i++)
+        for(int i = 0; i <= bees2Num; i++)
         {
             GameObject BeeClone2 = Instantiate(beeOriginal, new Vector3(i * 1.7f-0.87f, beeOriginal.transform.position.y+1.3f),
                 beeOriginal.transform.rotation);
