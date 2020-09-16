@@ -93,7 +93,8 @@ public class beeClone : MonoBehaviour
 
                     }
                     else
-                    {
+                    {   
+                        // hàng sole
                         GameObject BeeClone = Instantiate(beeOriginal, new Vector3(j * 1.7f - 0.87f, i * 1.3f),
                                        beeOriginal.transform.rotation);
                         BeeClone.name = "BeeClone" + (i + 1);
