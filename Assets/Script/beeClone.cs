@@ -84,14 +84,27 @@ public class beeClone : MonoBehaviour
             {
                 for (int j = 0; j < bees2Num; j++)
                 {
-                    GameObject BeeClone = Instantiate(beeOriginal, new Vector3(j * 1.7f - 0.87f, i * 1.6f),
-                        beeOriginal.transform.rotation);
-                    BeeClone.name = "BeeClone" + (j + 1);
+                    if(i % 2 == 0)
+                     {
+                       
+                        GameObject BeeClone2 = Instantiate(beeOriginal, new Vector3(j * 1.7f, i * 1.3f),
+                                   beeOriginal.transform.rotation);
+                        BeeClone2.name = "BeeClone2" + (j + 1);
+
+                    }
+                    else
+                    {
+                        GameObject BeeClone = Instantiate(beeOriginal, new Vector3(j * 1.7f - 0.87f, i * 1.3f),
+                                       beeOriginal.transform.rotation);
+                        BeeClone.name = "BeeClone" + (i + 1);
+
                 }
-                //GameObject BeeClone = Instantiate(beeOriginal, new Vector3(i * 1.7f, beeOriginal.transform.position.y * 1),
-                //        beeOriginal.transform.rotation);
-                //BeeClone.name = "BeeClone" + (i + 1);
+
+
             }
+
+
+        }
      
     }
 
