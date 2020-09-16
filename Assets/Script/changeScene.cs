@@ -16,7 +16,7 @@ public class changeScene : MonoBehaviour
     private float timeElapsed;
 
 
-    //public GameObject theManager;
+   
 
     // Update is called once per frame
     private void Update()
@@ -27,7 +27,7 @@ public class changeScene : MonoBehaviour
 
             SceneManager.LoadScene(sceneNameToLoad);
 
-             //DontDestroyOnLoad(theManager);
+         
 
     }
 }

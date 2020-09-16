@@ -7,15 +7,16 @@ public class AAA : MonoBehaviour
     public static AAA Instance;
 
     public int sodong;
+
     public int socot;
 
+   // public int sohang;
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
 
         DontDestroyOnLoad(gameObject);
-        
-        
+       
     }
 }

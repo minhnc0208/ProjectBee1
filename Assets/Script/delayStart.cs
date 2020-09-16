@@ -29,6 +29,7 @@ public class delayStart : MonoBehaviour
         Time.timeScale = 1;
 
         // Load Scene
+       
         SceneManager.LoadScene("HomeScene");
 
     }

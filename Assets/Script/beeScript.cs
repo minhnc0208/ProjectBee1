@@ -20,16 +20,16 @@ public class beeScript : MonoBehaviour
 
     public GameObject textDisplayTheCollum;
 
+    // the row
+    //public string theRow;
+
+    //public GameObject inputFieldTheRow;
+
+    //public GameObject textDisplayTheRow;
 
     public void StoreAll()
     {
-        theCollum = inputFieldTheCollum.GetComponent<Text>().text;
-
-        int.TryParse(inputFieldTheCollum.GetComponent<Text>().text, out int cotgido);
-
-        AAA.Instance.socot = cotgido;
-
-        textDisplayTheCollum.GetComponent<Text>().text = "Col: " + theCollum ;
+        // the Line
 
         theLine = inputFieldTheLine.GetComponent<Text>().text;
 
@@ -37,9 +37,37 @@ public class beeScript : MonoBehaviour
 
         AAA.Instance.sodong = donggido;
 
+        Debug.Log(donggido);
+
         textDisplayTheLine.GetComponent<Text>().text = "Line " + theLine;
 
+        // the Collum
 
+        theCollum = inputFieldTheCollum.GetComponent<Text>().text;
+
+        int.TryParse(inputFieldTheCollum.GetComponent<Text>().text, out int cotgido);
+
+        AAA.Instance.socot = cotgido;
+
+        Debug.Log(cotgido);
+
+        textDisplayTheCollum.GetComponent<Text>().text = "Col: " + theCollum ;
+
+        
+
+        // the Row
+
+        //theRow = inputFieldTheRow.GetComponent<Text>().text;
+
+        //int.TryParse(inputFieldTheRow.GetComponent<Text>().text, out int hanggido);
+
+        //AAA.Instance.sohang = hanggido;
+
+        //Debug.Log(hanggido);
+
+        //textDisplayTheRow.GetComponent<Text>().text = "Row " + theRow;
+
+        //Load Scene
         SceneManager.LoadScene("GameScene");
 
     }
