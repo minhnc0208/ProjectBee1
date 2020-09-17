@@ -84,6 +84,7 @@ public class beeClone : MonoBehaviour
             {
                 for (int j = 0; j < bees2Num; j++)
                 {
+                    // check xem đó là hàng lẻ hay chẵn => Nếu là hàng 1, 3, 5, 7 ( hàng lẻ ) !%2 thì else và <=>
                     if(i % 2 == 0)
                      {
                        
@@ -93,13 +94,13 @@ public class beeClone : MonoBehaviour
 
                     }
                     else
-                    {   
+                    {
                         // hàng sole
                         GameObject BeeClone = Instantiate(beeOriginal, new Vector3(j * 1.7f - 0.87f, i * 1.3f),
                                        beeOriginal.transform.rotation);
                         BeeClone.name = "BeeClone" + (i + 1);
 
-                }
+                    }
 
             }
 

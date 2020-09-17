@@ -53,7 +53,7 @@ public class beeScript : MonoBehaviour
 
         textDisplayTheCollum.GetComponent<Text>().text = "Col: " + theCollum ;
 
-        
+
 
         // the Row
 
