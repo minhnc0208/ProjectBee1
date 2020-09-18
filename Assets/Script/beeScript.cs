@@ -20,13 +20,6 @@ public class beeScript : MonoBehaviour
 
     public GameObject textDisplayTheCollum;
 
-    // the row
-    //public string theRow;
-
-    //public GameObject inputFieldTheRow;
-
-    //public GameObject textDisplayTheRow;
-
     public void StoreAll()
     {
         // the Line
@@ -37,7 +30,7 @@ public class beeScript : MonoBehaviour
 
         AAA.Instance.sodong = donggido;
 
-        Debug.Log(donggido);
+        Debug.Log("Số dòng: " + donggido);
 
         textDisplayTheLine.GetComponent<Text>().text = "Line " + theLine;
 
@@ -49,23 +42,9 @@ public class beeScript : MonoBehaviour
 
         AAA.Instance.socot = cotgido;
 
-        Debug.Log(cotgido);
+        Debug.Log("Số cột: " + cotgido);
 
         textDisplayTheCollum.GetComponent<Text>().text = "Col: " + theCollum ;
-
-
-
-        // the Row
-
-        //theRow = inputFieldTheRow.GetComponent<Text>().text;
-
-        //int.TryParse(inputFieldTheRow.GetComponent<Text>().text, out int hanggido);
-
-        //AAA.Instance.sohang = hanggido;
-
-        //Debug.Log(hanggido);
-
-        //textDisplayTheRow.GetComponent<Text>().text = "Row " + theRow;
 
         //Load Scene
         SceneManager.LoadScene("GameScene");
