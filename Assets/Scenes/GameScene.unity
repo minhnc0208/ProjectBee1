@@ -390,39 +390,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &628676581 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8295694272300740834, guid: b1134575d96cf2c43937e346f2c8d1c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 8295694271814739719}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &628676582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628676581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 858ff8a67bc573943b1e4d79f5d000e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &628676584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628676581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82955633f16acf04d934fc0fe5398066, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beeOriginal: {fileID: 0}
-  beeContainer: {fileID: 0}
-  toong: {fileID: 0}
 --- !u!1 &786270577
 GameObject:
   m_ObjectHideFlags: 0
