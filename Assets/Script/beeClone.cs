@@ -92,18 +92,15 @@ public class beeClone : MonoBehaviour
         {
             for (int j = 0; j < bees2Num; j++)
             {
+
+                GameObject go;
+                go = Instantiate(toong, beeContainer.transform);
                 // check xem đó là hàng lẻ hay chẵn => Nếu là hàng 1, 3, 5, 7 ( hàng lẻ ) !%2 thì else và <=>
                 if (i % 2 == 0)
                 {
                     // hàng chẵn
-                    GameObject BeeClone2 = Instantiate(toong, new Vector3(j * 27.9f, i * 23.5f),
-                               toong.transform.rotation, beeContainer.transform);
 
-                    BeeClone2.name = "BeeClone2" + (j + 1);
-
-                    BeeClone2.GetComponentInChildren<Text>().text = i.ToString();
-
-
+                    go.GetComponent<RectTransform>().localPosition = new Vector3(j * 27.9f, i * 23.5f);
                 }
                 else
                 {
@@ -113,15 +110,14 @@ public class beeClone : MonoBehaviour
                     //                   beeOriginal.transform.rotation);
                     //BeeClone.name = "BeeClone" + (i + 1);
 
-                    GameObject BeeClone1 = Instantiate(toong, new Vector3(j * 27.9f - 13.5f, i * 23.5f),
-                               toong.transform.rotation, beeContainer.transform);
 
-                    BeeClone1.name = "BeeClone1" + (j + 1);
+                    go.GetComponent<RectTransform>().localPosition = new Vector3(j * 27.9f - 13.5f, i * 23.5f);
 
 
-                    BeeClone1.GetComponentInChildren<Text>().text = i.ToString();
 
                 }
+                go.name = "BeeClone1" + (i * bees2Num + j + 1);
+                go.GetComponentInChildren<Text>().text = (i * bees2Num + j + 1).ToString();
 
             }
 
