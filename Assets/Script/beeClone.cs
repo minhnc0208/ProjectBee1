@@ -112,12 +112,12 @@ public class beeClone : MonoBehaviour
                     //                   beeOriginal.transform.rotation);
                     //BeeClone.name = "BeeClone" + (i + 1);
 
-                    GameObject BeeClone = Instantiate(toong, new Vector3(j * 27.9f - 13.5f, i * 23.5f),
+                    GameObject BeeClone1 = Instantiate(toong, new Vector3(j * 27.9f - 13.5f, i * 23.5f),
                                toong.transform.rotation, beeContainer.transform);
 
-                    BeeClone.name = "BeeClone" + (j + 1);
+                    BeeClone1.name = "BeeClone1" + (j + 1);
 
-                    BeeClone.GetComponentInChildren<Text>().text = i.ToString();
+                    BeeClone1.GetComponentInChildren<Text>().text = i.ToString();
 
                 }
 
