@@ -98,7 +98,7 @@ public class beeClone : MonoBehaviour
                 if (i % 2 == 0)
                 {
                     // hàng chẵn
-                    GameObject BeeClone2 = Instantiate(toong, new Vector3(j * 29f, i * 23f),
+                    GameObject BeeClone2 = Instantiate(toong, new Vector3(j * 28.9f, i * 23f),
                                toong.transform.rotation, beeContainer.transform);
                     BeeClone2.name = "BeeClone2" + (j + 1);
                     BeeClone2.GetComponentInChildren<Text>().text = i.ToString();

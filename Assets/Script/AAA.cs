@@ -10,7 +10,6 @@ public class AAA : MonoBehaviour
 
     public int socot;
 
-   // public int sohang;
     private void Awake()
     {
         if (Instance == null)
