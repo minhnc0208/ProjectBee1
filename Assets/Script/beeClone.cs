@@ -28,6 +28,7 @@ public class beeClone : MonoBehaviour
 
         //CreateBee(AAA.Instance.sodong);
 
+
         //CreateBee2(AAA.Instance.socot);
 
 
@@ -116,6 +117,7 @@ public class beeClone : MonoBehaviour
                                toong.transform.rotation, beeContainer.transform);
 
                     BeeClone1.name = "BeeClone1" + (j + 1);
+
 
                     BeeClone1.GetComponentInChildren<Text>().text = i.ToString();
 
