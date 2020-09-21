@@ -48,6 +48,11 @@ public class beeClone : MonoBehaviour
         throw new NotImplementedException();
     }
 
+    //private GameObject CreateAll()
+    //{
+    //    throw new NotImplementedException();
+    //}
+
     // Update is called once per frame
     void Update()
     {
@@ -95,6 +100,7 @@ public class beeClone : MonoBehaviour
 
                 GameObject go;
                 go = Instantiate(toong, beeContainer.transform);
+
                 // check xem đó là hàng lẻ hay chẵn => Nếu là hàng 1, 3, 5, 7 ( hàng lẻ ) !%2 thì else và <=>
                 if (i % 2 == 0)
                 {
