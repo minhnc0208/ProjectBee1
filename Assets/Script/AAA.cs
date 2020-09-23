@@ -10,12 +10,13 @@ public class AAA : MonoBehaviour
 
     public int socot;
 
+    public int sokhoi;
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
 
         DontDestroyOnLoad(gameObject);
-       
+
     }
 }

@@ -20,6 +20,14 @@ public class beeScript : MonoBehaviour
 
     public GameObject textDisplayTheCollum;
 
+    // the Mount
+
+    public string theMount;
+
+    public GameObject inputFieldTheMount;
+
+    public GameObject textDisplayTheMount;
+
     public void StoreAll()
     {
         // the Line
@@ -44,14 +52,28 @@ public class beeScript : MonoBehaviour
 
         Debug.Log("Số cột: " + cotgido);
 
-        textDisplayTheCollum.GetComponent<Text>().text = "Col: " + theCollum ;
+        textDisplayTheCollum.GetComponent<Text>().text = "Col: " + theCollum;
+
+        // the Mount
+
+        theMount = inputFieldTheMount.GetComponent<Text>().text;
+
+        int.TryParse(inputFieldTheMount.GetComponent<Text>().text, out int khoigido);
+
+        AAA.Instance.sokhoi = khoigido;
+
+        Debug.Log("Số khối: " + khoigido);
+
+        textDisplayTheMount.GetComponent<Text>().text = "Mount: " + theMount;
+
+
 
         //Load Scene
         SceneManager.LoadScene("GameScene");
 
     }
 
-  
+
 
 
 }

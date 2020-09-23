@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -15,6 +16,9 @@ public class beeClone : MonoBehaviour
 
     public GameObject toong;
 
+    public GameObject tongsokhoi;
+
+    public Transform canvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,14 +96,30 @@ public class beeClone : MonoBehaviour
 
     void CreateAll(int beesNum, int bees2Num)
     {
+        int index = 0;
+
+        GameObject goParent = null;
 
         for (int i = 0; i < beesNum; i++)
         {
             for (int j = 0; j < bees2Num; j++)
             {
+                if (index % AAA.Instance.sokhoi == 0)
+                {
+                    goParent = Instantiate(tongsokhoi) as GameObject;
+
+                    // set Parent trong Canvas
+                    goParent.transform.SetParent(canvas);
+
+
+
+                }
+
+                index++;
 
                 GameObject go;
                 go = Instantiate(toong, beeContainer.transform);
+
 
                 // check xem đó là hàng lẻ hay chẵn => Nếu là hàng 1, 3, 5, 7 ( hàng lẻ ) !%2 thì else và <=>
                 if (i % 2 == 0)
@@ -107,6 +127,8 @@ public class beeClone : MonoBehaviour
                     // hàng chẵn
 
                     go.GetComponent<RectTransform>().localPosition = new Vector3(j * 27.9f, i * 23.5f);
+
+                    goParent.transform.SetParent(canvas);
                 }
                 else
                 {
@@ -119,12 +141,33 @@ public class beeClone : MonoBehaviour
 
                     go.GetComponent<RectTransform>().localPosition = new Vector3(j * 27.9f - 13.5f, i * 23.5f);
 
-
+                    goParent.transform.SetParent(canvas);
 
                 }
                 go.name = "BeeClone1" + (i * bees2Num + j + 1);
+
                 go.GetComponentInChildren<Text>().text = (i * bees2Num + j + 1).ToString();
 
+
+
+                if (goParent != null)
+                {
+                    go.transform.SetParent(goParent.transform);
+
+                    goParent.name = "grpsokhoi" + (i * bees2Num + j + 1);
+
+                    // grpsokhoi move to the position
+
+                    //goParent.transform.localPosition = new Vector3(15f, 5f);
+
+
+                    goParent.GetComponent<RectTransform>().localPosition = new Vector3(150f, 50f);
+                }
+
+                else
+                {
+                    Debug.Log("parent not instantiate");
+                }
             }
 
         }
