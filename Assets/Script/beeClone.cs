@@ -19,6 +19,8 @@ public class beeClone : MonoBehaviour
     public GameObject tongsokhoi;
 
     public Transform canvas;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,14 @@ public class beeClone : MonoBehaviour
 
 
         CreateAll(AAA.Instance.sodong, AAA.Instance.socot);
+
+        List<int> result = FindNearby(45);
+        foreach (var item in result)
+        {
+            Debug.Log(item);
+        }
+
+
 
     }
 
@@ -93,9 +103,25 @@ public class beeClone : MonoBehaviour
     //    }
     //}
 
+    //ham => truyen vao param int => kq return 1 list(int)
 
-    void CreateAll(int beesNum, int bees2Num)
+    // int beeAll thay dc 5 thang xung quanh
+
+    // tạo hàm rồi truyền vào param có kiểu dữ liệu int => trả về kết quả 1 list ( chứa int ).
+    List<int> CreateNew(int beeAll)
     {
+        List<int> beeInt = new List<int>();
+
+        CreateAll(AAA.Instance.socot, AAA.Instance.sodong);
+
+        return beeInt;
+    }
+    // tạo mảng 2 chiều 
+
+    public void CreateAll(int beesNum, int bees2Num)
+    {
+        // truyền 2 tham số vào mảng 2 chiều và khai báo GO
+
         int index = 0;
 
         GameObject goParent = null;
@@ -111,13 +137,12 @@ public class beeClone : MonoBehaviour
                     // set Parent trong Canvas
                     goParent.transform.SetParent(canvas);
 
-
-
                 }
 
                 index++;
 
                 GameObject go;
+
                 go = Instantiate(toong, beeContainer.transform);
 
 
@@ -129,6 +154,10 @@ public class beeClone : MonoBehaviour
                     go.GetComponent<RectTransform>().localPosition = new Vector3(j * 27.9f, i * 23.5f);
 
                     goParent.transform.SetParent(canvas);
+
+
+
+
                 }
                 else
                 {
@@ -143,6 +172,7 @@ public class beeClone : MonoBehaviour
 
                     goParent.transform.SetParent(canvas);
 
+
                 }
                 go.name = "BeeClone1" + (i * bees2Num + j + 1);
 
@@ -156,12 +186,6 @@ public class beeClone : MonoBehaviour
 
                     goParent.name = "grpsokhoi" + (i * bees2Num + j + 1);
 
-                    // grpsokhoi move to the position
-
-                    //goParent.transform.localPosition = new Vector3(15f, 5f);
-
-
-                    goParent.GetComponent<RectTransform>().localPosition = new Vector3(150f, 50f);
                 }
 
                 else
@@ -174,5 +198,53 @@ public class beeClone : MonoBehaviour
 
     }
 
+    List<int> FindNearby(int index)
+    {
+        List<int> nearby = new List<int>();
+
+
+        int trai = index - 1;
+        int phai = index + 1;
+        int tren1 = index + AAA.Instance.socot;
+        int tren2 = index + AAA.Instance.socot + 1;
+        int duoi1 = index - AAA.Instance.socot;
+        int duoi2 = index - AAA.Instance.socot + 1;
+
+        if (IsValidNumber(trai))
+        {
+            nearby.Add(trai);
+        }
+
+        if (IsValidNumber(phai))
+        {
+            nearby.Add(phai);
+        }
+
+        if (IsValidNumber(tren1))
+        {
+            nearby.Add(tren1);
+        }
+        if (IsValidNumber(tren2))
+        {
+            nearby.Add(tren2);
+        }
+        if (IsValidNumber(duoi1))
+        {
+            nearby.Add(duoi1);
+        }
+        if (IsValidNumber(duoi2))
+        {
+            nearby.Add(duoi2);
+        }
+
+
+        return nearby;
+    }
+
+    bool IsValidNumber(int index)
+    {
+
+        return true;
+    }
 
 }
