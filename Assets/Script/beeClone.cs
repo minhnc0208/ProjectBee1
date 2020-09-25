@@ -43,7 +43,9 @@ public class beeClone : MonoBehaviour
 
         // tạo list kết quả chứa int = Những đối tượng xung quanh của con số đó
         // foreach của 1 item trong kết quả => Log => item ( con số ).
+
         List<int> result = FindNearby(45);
+
         foreach (var item in result)
         {
             Debug.Log(item);
