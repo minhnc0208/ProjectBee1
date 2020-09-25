@@ -30,6 +30,7 @@ public class beeScript : MonoBehaviour
 
     public void StoreAll()
     {
+
         // the Line
 
         theLine = inputFieldTheLine.GetComponent<Text>().text;
@@ -70,10 +71,20 @@ public class beeScript : MonoBehaviour
 
         //Load Scene
         SceneManager.LoadScene("GameScene");
-
     }
 
+    public void checkBtnGO()
+    {
+        // check điều kiện input số dòng, số cột, số khối không được âm ( !< 0 ) và != null 
 
+        if (inputFieldTheLine == null && inputFieldTheCollum == null && inputFieldTheMount == null)
+        {
+            if (AAA.Instance.socot < 0 && AAA.Instance.sodong < 0 && AAA.Instance.sodong < 0)
 
+                Debug.LogWarning("Số cột, số hàng, số khối không được < 0");
 
+            Debug.LogWarning("Số cột, số hàng, số khối không được để trống");
+
+        }
+    }
 }

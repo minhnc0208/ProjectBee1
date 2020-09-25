@@ -7,7 +7,7 @@ public class changeScene : MonoBehaviour
 {
     [SerializeField]
 
-    private float delayBeforeLoading = 10f;
+    private float delayBeforeLoading = 15f;
 
     [SerializeField]
 
@@ -16,7 +16,7 @@ public class changeScene : MonoBehaviour
     private float timeElapsed;
 
 
-   
+
 
     // Update is called once per frame
     private void Update()
@@ -27,7 +27,7 @@ public class changeScene : MonoBehaviour
 
             SceneManager.LoadScene(sceneNameToLoad);
 
-         
+
 
     }
 }

@@ -8,6 +8,7 @@ public class AAA : MonoBehaviour
 
     public int sodong;
 
+
     public int socot;
 
     public int sokhoi;

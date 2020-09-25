@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -44,7 +45,7 @@ public class beeClone : MonoBehaviour
         // tạo list kết quả chứa int = Những đối tượng xung quanh của con số đó
         // foreach của 1 item trong kết quả => Log => item ( con số ).
 
-        List<int> result = FindNearby(45);
+        List<int> result = FindNearby(100);
 
         foreach (var item in result)
         {
@@ -54,6 +55,7 @@ public class beeClone : MonoBehaviour
 
 
     }
+
 
     //private void CreateBee2(int socot)
     //{
@@ -209,73 +211,117 @@ public class beeClone : MonoBehaviour
         List<int> nearby = new List<int>();
 
         // Bên trái
+
         int trai = index - 1;
+
         // Bên phải
+
         int phai = index + 1;
+
         // Bên trên của bên trái
+
         int tren1 = index + AAA.Instance.socot;
+
         // Bên trên của bên phải
+
         int tren2 = index + AAA.Instance.socot + 1;
+
         // Bên dưới của bên trái
+
         int duoi1 = index - AAA.Instance.socot;
+
+
+
         // Bên dưới của bên phải
+
         int duoi2 = index - AAA.Instance.socot + 1;
+
+
 
         // check số bên trái có hợp lệ hay ko => Nếu hợp lệ, thì add số bên trái <=> Nếu không hợp lệ, thì không add số bên trái
 
-        if (IsValidNumber(trai))
+        if (IsValidNumber(trai) && trai <= 0 || trai < index - 1)
         {
+            Debug.Log("Số " + trai + " này không hợp lệ");
+
             nearby.Add(trai);
+
         }
 
         // check số bên phải có hợp lệ hay ko => Nếu hợp lệ, thì add số bên phải <=> Nếu không hợp lệ, thì không add số bên phải
 
-        if (IsValidNumber(phai))
+        if (IsValidNumber(phai) && phai > 0)
         {
+            //if (phai > index + 1)
+            //{
+            //    Debug.Log(phai);
+
+            //}
+            //Debug.Log("Không có số " + phai + " này"); 
+            Debug.Log(phai);
+
             nearby.Add(phai);
+
         }
 
         // check số bên trên của bên trái có hợp lệ hay ko 
         // => Nếu hợp lệ, thì add số bên trên của bên trái <=> Nếu không hợp lệ, thì không add số bên trên của bên trái
 
-        if (IsValidNumber(tren1))
+        if (IsValidNumber(tren1) && tren1 > 0)
         {
+            if (tren1 > AAA.Instance.socot + 1)
+
+                Debug.Log("Không có số " + tren1 + " này");
+
             nearby.Add(tren1);
+            Debug.Log(tren1);
         }
 
         // check số bên trên của bên phải có hợp lệ hay ko 
         // => Nếu hợp lệ, thì add số bên trên của bên phải <=> Nếu không hợp lệ, thì không add số bên trên của bên phải
 
-        if (IsValidNumber(tren2))
+        if (IsValidNumber(tren2) && tren2 > 0)
         {
+            if (tren2 < AAA.Instance.socot + 1)
+
+                Debug.Log("Không có số " + tren2 + " này");
+
             nearby.Add(tren2);
+
+            Debug.Log(tren2);
         }
 
         // check số bên dưới của bên trái có hợp lệ hay ko 
         // => Nếu hợp lệ, thì add số bên dưới của bên trái <=> Nếu không hợp lệ, thì không add số bên dưới của bên trái
 
-        if (IsValidNumber(duoi1))
+        if (IsValidNumber(duoi1) && duoi1 < 0)
         {
+
+            Debug.Log("Số âm " + duoi1 + " không hợp lệ");
+
             nearby.Add(duoi1);
         }
 
         // check số bên dưới của bên phải có hợp lệ hay ko 
         // => Nếu hợp lệ, thì add số bên dưới của bên phải <=> Nếu không hợp lệ, thì không add số bên dưới của bên phải 
 
-        if (IsValidNumber(duoi2))
+        if (IsValidNumber(duoi2) && duoi2 < 0)
         {
+            Debug.Log("Số âm " + duoi2 + " không hợp lệ");
+
             nearby.Add(duoi2);
         }
 
         // trả về những đối tượng ở gần
+
         return nearby;
     }
+
+
 
     // xác định số hợp lệ ( loại bỏ được số âm, loại bỏ được những số bên góc )
     bool IsValidNumber(int index)
     {
-
         return true;
     }
-
 }
